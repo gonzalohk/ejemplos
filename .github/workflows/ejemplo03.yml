@@ -3,20 +3,24 @@ name: Crear un ZIP del directorio
 on:
   push:
     branches:
-      - main
+      - main3
 jobs:
   crear-zip:
     runs-on: ubuntu-latest
     steps:
 
-      - run: mkdir alfa
+      - name: Step 1 - Crear directotios alfa
+        run: mkdir alfa
 
-      - run: |
+      - name: step 2 - Adicionar archivos al directorio alfa
+        run: |
           cd alfa
           echo 'Mensaje alfa 1'    > alfa01.html
           echo 'Mensaje alfa 2'    > alfa02.html
           cd ..
 
-      - run: zip -r alfa.zip alfaaa
+      - name: step 3 - Zip Directorio alfa
+        run: zip -r alfa.zip alfa
         
-      - run: ls -la
+      - name: step 4 - Verificacion de la creacion del archivo ZIP
+        run: ls -la
