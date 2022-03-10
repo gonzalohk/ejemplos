@@ -3,7 +3,7 @@ name: Ejecucion de comandos en paralelo
 on:
   push:
     branches:
-      - main
+      - main2
 
 jobs:    
   comandos-paralelo:
