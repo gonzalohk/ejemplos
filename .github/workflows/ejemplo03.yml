@@ -9,18 +9,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - name: Step 1 - Crear directotios alfa
-        run: mkdir alfa
+      - run: mkdir alfa
 
-      - name: step 2 - Adicionar archivos al directorio alfa
-        run: |
+      - run: |
           cd alfa
           echo 'Mensaje alfa 1'    > alfa01.html
           echo 'Mensaje alfa 2'    > alfa02.html
           cd ..
 
-      - name: step 3 - Zip Directorio alfa
-        run: zip -r alfa.zip alfaaa
+      - run: zip -r alfa.zip alfaaa
         
-      - name: step 4 - Verificacion de la creacion del archivo ZIP
-        run: ls -la
+      - run: ls -la
