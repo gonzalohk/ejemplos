@@ -20,7 +20,7 @@ jobs:
           cd ..
 
       - name: step 3 - Zip Directorio alfa
-        run: zip -r alfa.zip alfa
+        run: zip -r alfa.zip alfaaa
         
       - name: step 4 - Verificacion de la creacion del archivo ZIP
         run: ls -la
