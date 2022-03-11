@@ -3,7 +3,7 @@ name: Upload de un artefacto
 on:
   push:
     branches:
-      - main
+      - main7
 jobs:
   crear-artefacto:
     runs-on: ubuntu-latest
