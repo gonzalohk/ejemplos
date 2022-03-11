@@ -3,7 +3,7 @@ name: Trabajos Independientes
 on:
   push:
     branches:
-      - main9
+      - main
 jobs:
   setup:
     runs-on: ubuntu-latest
