@@ -1,0 +1,28 @@
+name: Reutilizacion de Actiones ZIP
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  crear-zip:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Step 1 - Crear directotios alfa
+        run: mkdir alfa
+
+      - name: step 2 - Adicionar archivos al directorio alfa
+        run: |
+          cd alfa
+          echo 'Mensaje alfa 1' > alfa01.html
+          echo 'Mensaje alfa 2' > alfa02.html
+          cd ..
+
+      - uses: papeloto/action-zip@v1
+        with:
+          files: alfa/
+          dest: alfa.zip
+       
+      - name: step 4 - Verificacion de la creacion de arefactos ZIP
+        run: ls -la  
