@@ -1,0 +1,46 @@
+name: Upload de un artefacto
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  crear-upload-download-artefacto:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Step 1 - Crear directotios alfa
+        run: |
+          mkdir alfa
+          mkdir artefacto
+
+      - name: step 2 - Adicionar archivos al directorio alfa
+        run: |
+          cd alfa
+          echo 'Mensaje alfa 1' > alfa01.html
+          echo 'Mensaje alfa 2' > alfa02.html
+          cd ..
+
+      - name: step 3 - Creacion del artefacto ZIP
+        uses: papeloto/action-zip@v1
+        with:
+          files: alfa/
+          dest: alfa.zip
+       
+      - name: step 4 - Verificacio de la creacion del arefactos ZIP
+        run: ls -la
+
+      - name: step 5 - Upload Artifacto
+        uses: actions/upload-artifact@v3
+        with:
+          name: Artefacto_ALFA
+          path: alfa.zip
+
+      - name: step 6 - Download Artefacto
+        uses: actions/download-artifact@v3
+        with:
+          name: Artefacto_ALFA
+          path: ~/artefacto
+
+      - name: step 7 - Verificacio la descarga del arefactos
+        run: ls -la ~/artefacto
