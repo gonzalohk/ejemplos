@@ -15,9 +15,11 @@ jobs:
         kerberos: [libkrb5, heimdal]        
 
     steps:
-    - name: Install dependencies
-      run: |
+    - name: Show hostname
+      run: 
         cat /proc/sys/kernel/hostname
+    - name: Install dependencies
+      run: |        
         sudo apt-get update
         sudo apt-get install -y ${{ matrix.cc }} \
                                 libcurl4-${{ matrix.curl }}-dev \
