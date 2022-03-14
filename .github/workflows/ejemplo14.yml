@@ -12,11 +12,13 @@ jobs:
       matrix:
         cc: [gcc, clang]        
         curl: [openssl, gnutls, nss]
+        kerberos: [libkr5, heimdal]
 
     steps:
     - name: Install dependencies
       run: |
         sudo apt-get update
         sudo apt-get install -y ${{ matrix.cc }} \
-                                libcurl4-${{ matrix.cc }}-dev
+                                libcur14-${{ matrix.cc }}-dev \
+                                ${{ matrix.kerberos }}-dev
         
