@@ -10,10 +10,13 @@ jobs:
 
     strategy:    
       matrix:
-        cc: [gcc, clang]
+        cc: [gcc, clang]        
+        curl: [openssl, gnutls, nss]
 
     steps:
     - name: Install dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y ${{ matrix.cc }} 
+        sudo apt-get install -y ${{ matrix.cc }} \
+                                libcurl14-${{ matrix.cc }}-dev
+        
