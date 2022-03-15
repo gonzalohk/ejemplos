@@ -1,0 +1,28 @@
+name: Ejecucion de un contenedor
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+
+    services:
+      portal-oficina01:
+        image: httpd:latest
+        ports:
+           - 8080:80
+           
+      portal-oficina02:
+        image: nginx:latest
+        ports:
+           - 8081:80
+    steps:
+    - name: Acceder al portal-oficina01
+      run:
+        curl http://localhost:8080
+    
+    - name: Acceder al portal-oficina02
+      run:
+        curl http://localhost:8081
