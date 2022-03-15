@@ -1,0 +1,19 @@
+name: Matrices de opciones
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+
+    services:
+      portal:
+        image: httpd:latest
+        ports:
+           - 8080:80
+    steps:
+    - name: Acceder al portal
+      run:
+        curl http://localhost:8080
