@@ -1,4 +1,4 @@
-name: Ejecucion de comandos en paralelo (selft hosted)
+name: Ejecucion de comandos en paralelo (selfthosted)
 
 on:
   push:
