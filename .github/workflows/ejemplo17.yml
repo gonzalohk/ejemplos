@@ -7,7 +7,7 @@ on:
 
 jobs:    
   comandos-paralelo:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
 
       - name: Step 1 - Listado de directorios
