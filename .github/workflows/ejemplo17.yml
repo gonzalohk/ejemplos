@@ -10,7 +10,7 @@ jobs:
     runs-on: self-hosted
     strategy:    
       matrix:
-        folder: [folderA, folderB]
+        folder: [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z]
     steps:
 
       - name: Step 1 - Listado de directorios
