@@ -17,21 +17,21 @@ jobs:
         run: ls -la
         
       - name: Step 2 - Creacion de directorio
-        run: mkdir documentos
+        run: mkdir ${{ matrix.folder }}
 
       - name: Step 3 - Creacion de archivos en directorio
         run: |
-          cd documentos
+          cd ${{ matrix.folder }}
           echo 'Primer mensajes'    > archivo01.txt
           echo 'Segundo mensajes'    > archivo02.txt
           echo 'Tercer mensajes'    > archivo03.txt                    
           cd ..
       - name: Step 4 - Listado de directorios y archivos
-        run: ls -la  documentos
+        run: ls -la  ${{ matrix.folder }}
         
       - name: Step 5 - visualizacion de contendidos
         run: |      
-          cd documentos
+          cd ${{ matrix.folder }}
           cat archivo01.txt
           cat archivo02.txt
           cat archivo03.txt
