@@ -18,17 +18,17 @@ jobs:
 
       - name: Step 3 - Creacion de archivos en directorio
         run: |
-          cd documentos2
+          cd documentos
           echo 'Primer mensajes'    > archivo01.txt
           echo 'Segundo mensajes'    > archivo02.txt
           echo 'Tercer mensajes'    > archivo03.txt                    
           cd ..
       - name: Step 4 - Listado de directorios y archivos
-        run: ls -la  documentos2    
+        run: ls -la  documentos
         
       - name: Step 5 - visualizacion de contendidos
         run: |      
-          cd documentos2
+          cd documentos
           cat archivo01.txt
           cat archivo02.txt
           cat archivo03.txt
